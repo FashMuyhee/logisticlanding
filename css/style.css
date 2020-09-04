@@ -1,0 +1,224 @@
+/* .column__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-gap: .5rem;
+  align-items: flex-start;
+//    Uncomment these lines if you want to have the standard Trello behavior instead of the column wrapping 
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 1fr);
+} 
+ */
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap");
+body {
+  background-color: #ebeaf3;
+  width: 100%;
+  height: auto 0;
+  margin: 0;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+header {
+  height: 50px;
+  width: inherit;
+  padding-top: 10px;
+}
+
+header nav {
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav #brand {
+  color: #3f42aa;
+}
+
+header nav ul {
+  list-style-type: none;
+  margin: 1em 0 0.5em;
+  text-transform: capitalize;
+}
+
+header nav ul li {
+  -ms-grid-column-align: space-between;
+      justify-self: space-between;
+  display: inline;
+  padding: 0.5em 1.5em;
+}
+
+header nav ul li a {
+  color: #3f42aa;
+  text-decoration: none;
+}
+
+header nav ul li a:hover {
+  color: #959ace;
+}
+
+main {
+  padding-top: 5%;
+  width: 80%;
+  margin: auto;
+}
+
+main section#intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+main section#intro #note {
+  width: 45%;
+  height: 40%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+main section#intro #note h2 {
+  color: #3f42aa;
+  font-size: 3.7em;
+  line-height: 1.3;
+}
+
+main section#intro #note p {
+  color: #5058ad;
+  font-size: 1.2em;
+  line-height: 1.4;
+}
+
+main section#intro #img {
+  width: 50%;
+  background: url("../img/blob.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+main section#about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  padding-top: 8%;
+}
+
+main section#about #app {
+  width: 45%;
+  height: 40%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+main section#about #app h3 {
+  color: #3f42aa;
+  font-size: 2em;
+  line-height: 1;
+}
+
+main section#about #app p {
+  color: #5058ad;
+  font-size: 1.2em;
+  line-height: 1.4;
+}
+
+main section#about #app .app_features {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main section#about #app .app_features ul {
+  list-style-type: none;
+  width: 100%;
+}
+
+main section#about #app .app_features ul li {
+  margin: 10px;
+  color: #3f42aa;
+  font-weight: bold;
+  font-weight: bold;
+  width: 100%;
+}
+
+main section#about #aboutus {
+  width: 50%;
+}
+
+main section#about #aboutus img {
+  width: 80%;
+  height: auto;
+  margin: auto;
+}
+
+.button, .button_primary, .button_outline {
+  padding: 10px 20px;
+  min-width: 150px;
+  border-radius: 29px;
+  color: #ebeaf3;
+  -webkit-box-shadow: 0px 1px 16px 4px #959ace;
+          box-shadow: 0px 1px 16px 4px #959ace;
+  text-transform: capitalize;
+}
+
+.button_primary {
+  background-color: #3f42aa;
+  border: none;
+}
+
+.button_primary:hover {
+  background-color: transparent;
+  border: 2px solid #3f42aa;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #3f42aa;
+}
+
+.button_outline {
+  background: transparent;
+  border: 2px solid #3f42aa;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #3f42aa;
+}
+
+.button_outline:hover {
+  background-color: #3f42aa;
+  border: none;
+  color: #ebeaf3;
+  -webkit-box-shadow: 0px 1px 16px 4px #959ace;
+          box-shadow: 0px 1px 16px 4px #959ace;
+}
+/*# sourceMappingURL=style.css.map */
