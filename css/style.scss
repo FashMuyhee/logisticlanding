@@ -15,6 +15,25 @@ $accent_color: #3f42aa;
 $secondary_color: #959ace;
 $extra_color: #fdb967;
 
+$mobile: 440px;
+$tablet: 840px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width:#{$mobile}) and ( max-width: #{$tablet}) {
+    @content;
+  }
+}
+@mixin mobile_tablet {
+  @media (min-width:100px) and ( max-width: #{$tablet}) {
+    @content;
+  }
+}
+
 // body
 body {
   background-color: $primary_color;
@@ -23,14 +42,29 @@ body {
   margin: 0;
   font-family: "Kumbh Sans", sans-serif;
 }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $accent_color;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+p {
+  color: darken($color: $secondary_color, $amount: 20);
+}
 // end of body
 
 // header section
 header {
   height: 50px;
   width: inherit;
-  //   border: 1px solid CYAN;
+  // border: 1px solid CYAN;
   padding-top: 10px;
+  @include tablet {
+    padding: 0px;
+  }
   nav {
     margin: auto;
     width: 80%;
@@ -38,19 +72,44 @@ header {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    flex-flow: wrap;
     align-items: center;
+    // border: 1px solid red;
+    @include mobile_tablet {
+      padding: 0px;
+    }
     #brand {
       color: $accent_color;
+    }
+    .menu_bar {
+      display: none;
+      border: 1px solid $accent_color;
+      height: 40px;
+      align-self: center;
+      width: 40px;
+      @include mobile {
+        display: block;
+      }
+      @include tablet {
+        display: block;
+      }
     }
     ul {
       list-style-type: none;
       margin: 1em 0 0.5em;
       text-transform: capitalize;
+      @include mobile {
+        display: none;
+      }
+      @include tablet {
+        display: none;
+      }
       li {
         justify-self: space-between;
         display: inline;
         padding: 0.5em 1.5em;
+        @include tablet {
+          padding: 0.3em 1.3em;
+        }
         a {
           color: $accent_color;
           text-decoration: none;
@@ -75,21 +134,35 @@ main {
     justify-content: space-between;
     flex-wrap: wrap-reverse;
     flex-direction: row;
+    @include mobile {
+      flex-direction: row-reverse;
+    }
     #note {
       //   border: 1px solid mediumspringgreen;
       width: 45%;
       height: 40%;
       align-self: center;
-
+      @include mobile {
+        width: 100%;
+      }
       h2 {
         color: $accent_color;
         font-size: 3.7em;
         line-height: 1.3;
+        @include tablet {
+          font-size: 1.7em;
+        }
+        @include mobile {
+          font-size: 2.2em;
+        }
       }
       p {
         color: darken($color: $secondary_color, $amount: 20);
         font-size: 1.2em;
         line-height: 1.4;
+        @include tablet {
+          font-size: 1em;
+        }
       }
     }
     #img {
@@ -98,6 +171,17 @@ main {
       background: url("../img/blob.svg");
       background-repeat: no-repeat;
       background-position: center;
+      @include mobile {
+        width: 100%;
+      }
+      img {
+        @include mobile {
+          width: 322px;
+        }
+        @include tablet {
+          width: 383px;
+        }
+      }
     }
   }
   // end of intro
@@ -113,7 +197,9 @@ main {
       width: 45%;
       height: 40%;
       align-self: center;
-
+      @include mobile {
+        width: 100%;
+      }
       h3 {
         color: $accent_color;
         font-size: 2em;
@@ -143,13 +229,60 @@ main {
     #aboutus {
       //   border: 1px solid rebeccapurple;
       width: 50%;
+      @include mobile {
+        width: 100%;
+      }
       img {
         width: 80%;
         height: auto;
         margin: auto;
       }
     }
-    //   }end of about_us
+    //   end of about_us
+  }
+  // end of about
+  section#how {
+    // border: 1px solid midnightblue;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    flex-direction: row;
+    padding-top: 8%;
+    #how_it_works {
+      //   border: 1px solid mediumspringgreen;
+      width: 30%;
+      height: 40%;
+      align-self: center;
+      margin-top: 20%;
+      h3 {
+        color: $accent_color;
+        font-size: 2em;
+        line-height: 1;
+      }
+      p {
+        color: darken($color: $secondary_color, $amount: 20);
+        font-size: 1.2em;
+        line-height: 1.4;
+      }
+      .how_process {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    #truck {
+      //   border: 1px solid rebeccapurple;
+      width: 70%;
+      img {
+        width: 50%;
+        /* height: 100%; */
+        margin: auto;
+        position: absolute;
+        left: 50%;
+      }
+    }
+    //   end of how
   }
 }
 // end of main section
@@ -187,4 +320,4 @@ main {
   color: $primary_color;
   box-shadow: 0px 1px 16px 4px $secondary_color;
 }
-// end of button componet
+// end of button component

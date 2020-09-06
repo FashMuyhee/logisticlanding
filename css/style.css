@@ -17,10 +17,30 @@ body {
   font-family: "Kumbh Sans", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #3f42aa;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+p {
+  color: #5058ad;
+}
+
 header {
   height: 50px;
   width: inherit;
   padding-top: 10px;
+}
+
+@media (min-width: 440px) and (max-width: 840px) {
+  header {
+    padding: 0px;
+  }
 }
 
 header nav {
@@ -37,15 +57,41 @@ header nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-flow: wrap;
-      flex-flow: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
+@media (min-width: 100px) and (max-width: 840px) {
+  header nav {
+    padding: 0px;
+  }
+}
+
 header nav #brand {
   color: #3f42aa;
+}
+
+header nav .menu_bar {
+  display: none;
+  border: 1px solid #3f42aa;
+  height: 40px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 40px;
+}
+
+@media (max-width: 440px) {
+  header nav .menu_bar {
+    display: block;
+  }
+}
+
+@media (min-width: 440px) and (max-width: 840px) {
+  header nav .menu_bar {
+    display: block;
+  }
 }
 
 header nav ul {
@@ -54,11 +100,29 @@ header nav ul {
   text-transform: capitalize;
 }
 
+@media (max-width: 440px) {
+  header nav ul {
+    display: none;
+  }
+}
+
+@media (min-width: 440px) and (max-width: 840px) {
+  header nav ul {
+    display: none;
+  }
+}
+
 header nav ul li {
   -ms-grid-column-align: space-between;
       justify-self: space-between;
   display: inline;
   padding: 0.5em 1.5em;
+}
+
+@media (min-width: 440px) and (max-width: 840px) {
+  header nav ul li {
+    padding: 0.3em 1.3em;
+  }
 }
 
 header nav ul li a {
@@ -91,6 +155,15 @@ main section#intro {
           flex-direction: row;
 }
 
+@media (max-width: 440px) {
+  main section#intro {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
 main section#intro #note {
   width: 45%;
   height: 40%;
@@ -99,10 +172,28 @@ main section#intro #note {
       align-self: center;
 }
 
+@media (max-width: 440px) {
+  main section#intro #note {
+    width: 100%;
+  }
+}
+
 main section#intro #note h2 {
   color: #3f42aa;
   font-size: 3.7em;
   line-height: 1.3;
+}
+
+@media (min-width: 440px) and (max-width: 840px) {
+  main section#intro #note h2 {
+    font-size: 1.7em;
+  }
+}
+
+@media (max-width: 440px) {
+  main section#intro #note h2 {
+    font-size: 2.2em;
+  }
 }
 
 main section#intro #note p {
@@ -111,11 +202,35 @@ main section#intro #note p {
   line-height: 1.4;
 }
 
+@media (min-width: 440px) and (max-width: 840px) {
+  main section#intro #note p {
+    font-size: 1em;
+  }
+}
+
 main section#intro #img {
   width: 50%;
   background: url("../img/blob.svg");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+@media (max-width: 440px) {
+  main section#intro #img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 440px) {
+  main section#intro #img img {
+    width: 322px;
+  }
+}
+
+@media (min-width: 440px) and (max-width: 840px) {
+  main section#intro #img img {
+    width: 383px;
+  }
 }
 
 main section#about {
@@ -140,6 +255,12 @@ main section#about #app {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+@media (max-width: 440px) {
+  main section#about #app {
+    width: 100%;
+  }
 }
 
 main section#about #app h3 {
@@ -177,10 +298,69 @@ main section#about #aboutus {
   width: 50%;
 }
 
+@media (max-width: 440px) {
+  main section#about #aboutus {
+    width: 100%;
+  }
+}
+
 main section#about #aboutus img {
   width: 80%;
   height: auto;
   margin: auto;
+}
+
+main section#how {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 8%;
+}
+
+main section#how #how_it_works {
+  width: 30%;
+  height: 40%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 20%;
+}
+
+main section#how #how_it_works h3 {
+  color: #3f42aa;
+  font-size: 2em;
+  line-height: 1;
+}
+
+main section#how #how_it_works p {
+  color: #5058ad;
+  font-size: 1.2em;
+  line-height: 1.4;
+}
+
+main section#how #how_it_works .how_process p {
+  font-size: 14px;
+}
+
+main section#how #truck {
+  width: 70%;
+}
+
+main section#how #truck img {
+  width: 50%;
+  /* height: 100%; */
+  margin: auto;
+  position: absolute;
+  left: 50%;
 }
 
 .button, .button_primary, .button_outline {
