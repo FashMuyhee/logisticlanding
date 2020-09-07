@@ -192,7 +192,7 @@ main section#intro #note h2 {
 
 @media (max-width: 440px) {
   main section#intro #note h2 {
-    font-size: 2.2em;
+    font-size: 35px;
   }
 }
 
@@ -269,6 +269,12 @@ main section#about #app h3 {
   line-height: 1;
 }
 
+@media (max-width: 440px) {
+  main section#about #app h3 {
+    font-size: 3em;
+  }
+}
+
 main section#about #app p {
   color: #5058ad;
   font-size: 1.2em;
@@ -284,6 +290,12 @@ main section#about #app .app_features {
 main section#about #app .app_features ul {
   list-style-type: none;
   width: 100%;
+}
+
+@media (max-width: 440px) {
+  main section#about #app .app_features ul {
+    padding-left: 0%;
+  }
 }
 
 main section#about #app .app_features ul li {
@@ -304,10 +316,30 @@ main section#about #aboutus {
   }
 }
 
+@media (min-width: 440px) and (max-width: 840px) {
+  main section#about #aboutus {
+    margin-top: 10%;
+  }
+}
+
 main section#about #aboutus img {
   width: 80%;
   height: auto;
   margin: auto;
+}
+
+@media (max-width: 440px) {
+  main section#about #aboutus img {
+    width: 100%;
+    margin: 10% auto;
+  }
+}
+
+@media (min-width: 440px) and (max-width: 840px) {
+  main section#about #aboutus img {
+    width: 100%;
+    margin: 20% auto;
+  }
 }
 
 main section#how {
@@ -335,10 +367,28 @@ main section#how #how_it_works {
   margin-top: 20%;
 }
 
+@media (max-width: 440px) {
+  main section#how #how_it_works {
+    width: 100%;
+  }
+}
+
+@media (min-width: 440px) and (max-width: 840px) {
+  main section#how #how_it_works {
+    width: 40%;
+  }
+}
+
 main section#how #how_it_works h3 {
   color: #3f42aa;
   font-size: 2em;
   line-height: 1;
+}
+
+@media (min-width: 440px) and (max-width: 840px) {
+  main section#how #how_it_works h3 {
+    font-size: 35px;
+  }
 }
 
 main section#how #how_it_works p {
@@ -355,12 +405,24 @@ main section#how #truck {
   width: 70%;
 }
 
+@media (max-width: 440px) {
+  main section#how #truck {
+    display: none;
+  }
+}
+
 main section#how #truck img {
   width: 50%;
   /* height: 100%; */
   margin: auto;
   position: absolute;
   left: 50%;
+}
+
+@media (min-width: 440px) and (max-width: 840px) {
+  main section#how #truck img {
+    left: 56%;
+  }
 }
 
 .button, .button_primary, .button_outline {
