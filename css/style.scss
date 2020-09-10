@@ -13,11 +13,13 @@
 $primary_color: #ebeaf3;
 $accent_color: #3f42aa;
 $secondary_color: #959ace;
-$extra_color: #fdb967;
+$yellow: #fdb967;
+$orange: #ff8552;
 
 $mobile: 440px;
-$tablet: 840px;
+$tablet: 1024px;
 
+// media query mixins
 @mixin mobile {
   @media (max-width: #{$mobile}) {
     @content;
@@ -33,6 +35,8 @@ $tablet: 840px;
     @content;
   }
 }
+
+// end of media query mixins
 
 // body
 body {
@@ -53,6 +57,7 @@ h5 {
 }
 p {
   color: darken($color: $secondary_color, $amount: 20);
+  // color: black;
 }
 // end of body
 
@@ -209,7 +214,7 @@ main {
         }
       }
       p {
-        color: darken($color: $secondary_color, $amount: 20);
+        // color: darken($color: $secondary_color, $amount: 20);
         font-size: 1.2em;
         line-height: 1.4;
       }
@@ -287,7 +292,7 @@ main {
         }
       }
       p {
-        color: darken($color: $secondary_color, $amount: 20);
+        // color: darken($color: $secondary_color, $amount: 20);
         font-size: 1.2em;
         line-height: 1.4;
       }
@@ -317,8 +322,233 @@ main {
     }
     //   end of how
   }
+
+  // features section
+  section#features {
+    margin-top: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    flex-direction: row-reverse;
+    @include mobile {
+      justify-content: space-evenly;
+      flex-direction: column;
+    }
+    .title {
+      width: 30%;
+      // border: 1px solid brown;
+      h3 {
+        font-size: 2em;
+      }
+      @include mobile {
+        width: 90%;
+        background: #d6d5d6;
+        border-radius: 5px;
+        padding: 0px 5% 0px 5%;
+        margin: auto;
+      }
+    }
+    .features {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 68%;
+      // border: 1px solid red;
+
+      @include mobile {
+        width: 100%;
+      }
+
+      .features_card {
+        // width: 46%;
+        flex-basis: 250px;
+        border-radius: 3px;
+        height: 130px;
+        margin: 5px auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: $yellow;
+        // flex-grow: 1;
+        @include mobile {
+          flex-grow: 1;
+          width: 300px;
+        }
+        span.icon {
+          width: 50px;
+          // background: $accent_color;
+          border: 1px solid $accent_color;
+          height: 30%;
+          padding: 5px 0px 5px 0px;
+          border-radius: 50%;
+        }
+        .content {
+          width: 70%;
+          h4 {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+          p {
+            color: white;
+          }
+        }
+      }
+      /*  .features_card:nth-child(1) {
+        background: $orange;
+      }
+      .features_card:nth-child(2) {
+        background: $yellow;
+      }
+      .features_card:nth-child(3) {
+        background: $secondary_color;
+      }
+      .features_card:nth-child(4) {
+        background: teal;
+      } */
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+  // end of feature section
+
+  // subscribe section
+  section#subscribe {
+    width: 80%;
+    margin: 15% auto;
+    .title {
+      text-align: center;
+      h3 {
+        color: $secondary_color;
+        font-size: 2.7em;
+        span {
+          color: $accent_color;
+        }
+        @include mobile {
+          font-size: 23px;
+        }
+      }
+    }
+    .subscribe_form {
+      width: 80%;
+      margin: auto;
+      @include mobile_tablet {
+        display: grid;
+        place-items: center;
+      }
+      input[type="text"] {
+        width: 70%;
+        height: 37px;
+        border: none;
+        border-radius: 28px;
+        padding-left: 16px;
+        color: $secondary_color;
+        box-shadow: 0px 1px 16px 2px $secondary_color;
+        @include mobile {
+          width: 100%;
+          margin-top: 5%;
+          margin-bottom: 2%;
+        }
+        @include tablet {
+          width: 100%;
+          margin-top: 5%;
+          margin-bottom: 2%;
+        }
+      }
+
+      input[type="text"] :focus {
+        outline: none;
+      }
+    }
+  }
+  // end of subscribe section
 }
 // end of main section
+
+// footer section
+footer {
+  padding-top: 5%;
+  width: 80%;
+  margin: auto;
+  .nav {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    // border: 1px solid red;
+    @include mobile_tablet {
+      padding: 0px;
+      flex-direction: column-reverse;
+    }
+    #brand {
+      color: $accent_color;
+    }
+    ul {
+      list-style-type: none;
+      margin: 1em 0 0.5em;
+      text-transform: capitalize;
+      @include mobile_tablet {
+        margin: 1em 0 0.5em;
+      }
+      li {
+        justify-self: space-between;
+        display: inline;
+        padding: 0.5em 1.5em;
+        @include mobile {
+          padding: 1px;
+        }
+        a {
+          color: $accent_color;
+          text-decoration: none;
+        }
+        a:hover {
+          color: $secondary_color;
+        }
+      }
+    }
+  }
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    @include mobile {
+      flex-direction: column;
+    }
+    p {
+      text-align: center;
+      @include mobile {
+        width: 100%;
+      }
+    }
+    .social_icon {
+      width: 25%;
+      align-self: center;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      @include tablet {
+        width: 40%;
+      }
+      @include mobile {
+        width: 100%;
+      }
+      span.icon {
+        width: 50px;
+        // background: $accent_color;
+        border: 1px solid $accent_color;
+        height: 40px;
+        padding: 5px 0px 5px 0px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+// end offooter section
 
 // button component
 .button {
